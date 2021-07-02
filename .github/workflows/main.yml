@@ -1,9 +1,7 @@
 name: GitHub usage methodology
-
 on:
   push:
-    branches:
-      - [ master,main ]
+    branches: [ master,main ]
 env:
   SITE_DIR: 'site'
 jobs:
