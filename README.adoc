@@ -1,4 +1,4 @@
-ifdef::env-github[]
+ifdef::env-github,backend-html5[]
 :imagesdir: images
 :downloaddir: download
 :xrefstyle: short
@@ -8,7 +8,6 @@ ifdef::env-github[]
 :important-caption: :heavy_exclamation_mark:
 :caution-caption: :fire:
 :warning-caption: :warning:
-
 endif::[]
 
 = *Git usage methodology*
@@ -24,10 +23,12 @@ toc::[]
 
 
 // Links for GitHub
-ifdef::env-github,backend-html5[]
-<<include::content.adoc[]#content, GitHub usage methodology>>
-endif::[]
+//ifdef::env-github,backend-html5[]
+//<<include::content.adoc[]#content, GitHub usage methodology>>
+//endif::[]
 // includes for AsciiDoc processing
-ifndef::env-github,backend-html5[]
+//ifndef::env-github,backend-html5[]
+//include::content.adoc[]
+//endif::[]
+
 include::content.adoc[]
-endif::[]
