@@ -182,9 +182,8 @@ _The normal way to handle this is to create _https://gitversion.readthedocs.io/e
 _If you need to do major feature developments on your support branches, you need to treat the support branches as __+master+__ for each version, skipping __+develop+__ altogether. If you need __+develop+__ because you need a synchronisation point between several ongoing feature branches on an old version of the product, it almost sounds like that version warrants separation out into its own repository._ +
 https://gitversion.readthedocs.io/en/latest/input/docs/git-branching-strategies/gitflow-examples/[_https://Gitversion.readthedocs.io/en/latest/input/docs/Git-branching-strategies/Gitflow-examples/]_
 
----------------------------------
 
-== Contribution from Dragos
+= To be revised
 
 
 Why are multiple branches needed? +

@@ -1,0 +1,25 @@
+ifdef::env-github[]
+:imagesdir: images
+:downloaddir: download
+:xrefstyle: short
+
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+
+endif::[]
+
+= *Git usage methodology*
+
+:toc:
+:toc-placement: preamble
+:toclevels: 1
+:showtitle:
+
+This is a document preamble.
+
+toc::[]
+
+include::content.adoc[]
