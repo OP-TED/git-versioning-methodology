@@ -22,4 +22,12 @@ This is a document preamble.
 
 toc::[]
 
+
+// Links for GitHub
+ifdef::env-github,backend-html5[]
+<<include::content.adoc[]#content, GitHub usage methodology>>
+endif::[]
+// includes for AsciiDoc processing
+ifndef::env-github,backend-html5[]
 include::content.adoc[]
+endif::[]
