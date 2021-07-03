@@ -43,7 +43,7 @@ Consider a version format of X.Y.Z (Major.Minor.Patch). Bug fixes not affecting 
 .Backwards compatibility in semantic versioning scheme
 [reftext="Figure {counter:figure}",align="center"]
 //image::../images/semantic_versioning.png[width=70%]
-image::_images/semantic_versioning.png[semantic versioning scheme, 500, align="center"]
+image::semantic_versioning.png[semantic versioning scheme, 500, align="center"]
 
 Adopting semantic versioning has a number of advantages [dp].
 
