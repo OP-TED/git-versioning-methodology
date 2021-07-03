@@ -1,1 +1,1 @@
-* xref:content.adoc[Methodology]
+* xref:index.adoc[Methodology]
