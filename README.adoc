@@ -28,7 +28,7 @@ toc::[]
 //endif::[]
 // includes for AsciiDoc processing
 //ifndef::env-github,backend-html5[]
-//include::content.adoc[]
+//include::index.adoc[]
 //endif::[]
 
-include::content.adoc[]
+include::index.adoc[]
