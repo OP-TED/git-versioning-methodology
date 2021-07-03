@@ -1,6 +1,6 @@
 site:
   title: GitHub usage methodology
-  start_page: index.adoc
+  start_page: main-docs::index.adoc
 content:
   sources:
     - url: https://github.com/meaningfy-ws/git-versioning-methodology
