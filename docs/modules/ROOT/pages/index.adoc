@@ -42,7 +42,7 @@ Consider a version format of X.Y.Z (Major.Minor.Patch). Bug fixes not affecting 
 [#sem-vserion]
 .Backwards compatibility in semantic versioning scheme
 [reftext="Figure {counter:figure}",align="center"]
-image::/images/semantic_versioning.png[width=70%]
+image::../images/semantic_versioning.png[width=70%]
 
 Adopting semantic versioning has a number of advantages [dp].
 
@@ -68,7 +68,7 @@ When a new branch is created, Git keeps track of which commit is branched off in
 [#basic-flow]
 .Basic branching flow with pull request
 [reftext="Figure {counter:figure}",align="center"]
-image::/images/git-basic-flow.png[alt=basic,width=80%]
+image::../images/git-basic-flow.png[alt=basic,width=80%]
 
 The contributor makes changes locally on a support branch (for example a feature) and when the work is complete, the changes are all pushed into the remote repository.  Then the contributor files a pull request, which means that before merging the branch into the master branch, the changes must be revised by peers. This process usually generates a number of improvement suggestions, which result in a series of additional minor commits. Using pull requests is a best practice generally adopted for ensuring a higher quality of work. When the pull request is accepted, the branch author or the repository maintainer merges the branch into the master or development branch, depending on the branching strategy. The pull request is closed and the feature branch is deleted from the repository.
 
@@ -106,7 +106,7 @@ Gitflow model has been developed over 10 years ago [] and is the result of cryst
 [#simple-gitflow]
 .Simplified Gitflow model
 [reftext="Figure {counter:figure}",align="center"]
-image::/images/git-simplified-flow.png[alt=basic,width=97%]
+image::../images/git-simplified-flow.png[alt=basic,width=97%]
 
 ==== Developing a new feature
 
@@ -134,7 +134,7 @@ As publishers, we need to ensure the possibility to gradually update an artefact
 [#two-in-production]
 .Two in production evolution pattern
 [reftext="Figure {counter:figure}",align="center"]
-image::/images/two-in-production.png[alt=basic,width=90%]
+image::../images/two-in-production.png[alt=basic,width=90%]
 
 The solution is to maintain two versions of a model in parallel as working standards as depicted in <<two-in-production>>. These two model versions provide roughly the same domain coverage but are incompatible with each other because they implement different modelling decisions and approaches.  +
 Or, in the case of software products, deploy and support two versions of a software endpoint and its operations that provide variations of the same functionality, but do not have to be compatible with each other.  +
