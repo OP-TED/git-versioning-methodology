@@ -1,6 +1,6 @@
 name: main-docs
-title: GitHub usage methodology
 version: latest
+title: GitHub usage methodology
 start_page: ROOT:index.adoc
 nav:
 - ROOT/nav.adoc
