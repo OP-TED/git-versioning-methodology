@@ -167,13 +167,8 @@ A solution to this problem is called “Semantic Versioning” [semver], which i
 Consider a version format of X.Y.Z (Major.Minor.Patch). Bug fixes not affecting the artefact increment the patch version. Backwards compatible artefact additions/changes increment the minor version. And, backwards-incompatible artefact changes increment the major version. For details refer to [semver] specification. Under this scheme version numbers and the way they change convey meaning about the underlying artefact and what has been modified from one version to the next.<br>
  <a href="#sem-vserion">Figure 1</a> depicts an example of how the changes in version number shall be interpreted under the semantic versioning scheme. For example, evolving from version 1.3.5 to 1.3.6 represents a backwards-compatible patch, from 1.3.5 to 1.4.0 a backwards-compatible new development, while switching from 1.3.5 to 2.0.0 breaks the backwards compatibility.</p>
 </div>
-<div id="sem-vserion" class="imageblock text-center">
-<div class="content">
-<img src="_images/docs/modules/ROOT/images/semantic_versioning.png" alt="semantic versioning scheme" width="500">
-</div>
-<div class="title">Figure 1. Backwards compatibility in semantic versioning scheme</div>
-</div>
-<div class="paragraph">
+<div id="sem-vserion" class="paragraph">
+<div class="title">Backwards compatibility in semantic versioning scheme</div>
 <p>Adopting semantic versioning has a number of advantages [dp].</p>
 </div>
 <div class="ulist">
@@ -222,7 +217,7 @@ When a new branch is created, Git keeps track of which commit is branched off in
 <div class="content">
 <img src="_images/git-basic-flow.png" alt="basic" width="80%">
 </div>
-<div class="title">Figure 2. Basic branching flow with pull request</div>
+<div class="title">Figure 1. Basic branching flow with pull request</div>
 </div>
 <div class="paragraph">
 <p>The contributor makes changes locally on a support branch (for example a feature) and when the work is complete, the changes are all pushed into the remote repository.  Then the contributor files a pull request, which means that before merging the branch into the master branch, the changes must be revised by peers. This process usually generates a number of improvement suggestions, which result in a series of additional minor commits. Using pull requests is a best practice generally adopted for ensuring a higher quality of work. When the pull request is accepted, the branch author or the repository maintainer merges the branch into the master or development branch, depending on the branching strategy. The pull request is closed and the feature branch is deleted from the repository.</p>
@@ -270,7 +265,7 @@ Tags on the other hand shall be named always by the semantic version scheme ment
 <div class="content">
 <img src="_images/git-simplified-flow.png" alt="basic" width="97%">
 </div>
-<div class="title">Figure 3. Simplified Gitflow model</div>
+<div class="title">Figure 2. Simplified Gitflow model</div>
 </div>
 <div class="sect3">
 <h4 id="_developing_a_new_feature"><a class="anchor" href="#_developing_a_new_feature"></a>Developing a new feature</h4>
@@ -310,7 +305,7 @@ As publishers, we need to ensure the possibility to gradually update an artefact
 <div class="content">
 <img src="_images/two-in-production.png" alt="basic" width="90%">
 </div>
-<div class="title">Figure 4. Two in production evolution pattern</div>
+<div class="title">Figure 3. Two in production evolution pattern</div>
 </div>
 <div class="paragraph">
 <p>The solution is to maintain two versions of a model in parallel as working standards as depicted in <a href="#two-in-production">Figure 4</a>. These two model versions provide roughly the same domain coverage but are incompatible with each other because they implement different modelling decisions and approaches. <br>
