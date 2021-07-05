@@ -181,9 +181,15 @@ Current practice and issues (fixing SOTA):</p>
 <div class="paragraph">
 <p>In the world of software management, there exists a dreaded place called "dependency hell". This applies not only to software development but to authoring models, architecture, documentation, or, broadly, any artefact. The bigger grows the body of work (software, model, documentation etc.) the more changes are introduced and dependencies integrated, which makes it more likely to arrive, one day, in this pit of despair.<br>
 Releasing a new work package quickly becomes a nightmare. If the dependency specifications are too tight, you are in danger of version lock (the inability to upgrade a package without having to release new versions of every dependent package). If dependencies are specified too loosely, you will inevitably be bitten by version promiscuity (assuming compatibility with more future versions than is reasonable). Dependency hell is where you are when version lock and/or version promiscuity prevent you from easily and safely moving your project forward. <a href="#semver">[semver]</a> <br>
-A solution to this problem is called "Semantic Versioning" <a href="#semver">[semver]</a>, which is a simple set of rules and requirements that dictate how version numbers are assigned and incremented. It involves describing clearly and precisely what is being published and which features are included and what are the limitations, basically setting the expectations and scope. Once the artefacts are identified for the public, you communicate changes to them with specific increments to your version number and eventually with associated change notes. <br>
-<em>X.Y.Z (Major.Minor.Patch)</em><br>
-Consider a version format of X.Y.Z (Major.Minor.Patch). Bug fixes not affecting the artefact increment the patch version. Backwards compatible artefact additions/changes increment the minor version. And, backwards-incompatible artefact changes increment the major version. For details refer to <a href="#semver">[semver]</a> specification. Under this scheme version numbers and the way they change convey meaning about the underlying artefact and what has been modified from one version to the next.<br>
+A solution to this problem is called "Semantic Versioning" <a href="#semver">[semver]</a>, which is a simple set of rules and requirements that dictate how version numbers are assigned and incremented. It involves describing clearly and precisely what is being published and which features are included and what are the limitations, basically setting the expectations and scope. Once the artefacts are identified for the public, you communicate changes to them with specific increments to your version number and eventually with associated change notes.</p>
+</div>
+<div class="quoteblock text-center">
+<blockquote>
+<em>X.Y.Z (Major.Minor.Patch)</em>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Consider a version format of X.Y.Z (Major.Minor.Patch). Bug fixes not affecting the artefact increment the patch version. Backwards compatible artefact additions/changes increment the minor version. And, backwards-incompatible artefact changes increment the major version. For details refer to <a href="#semver">[semver]</a> specification. Under this scheme version numbers and the way they change convey meaning about the underlying artefact and what has been modified from one version to the next.<br>
  <a href="#sem-vserion">Figure 1</a> depicts an example of how the changes in version number shall be interpreted under the semantic versioning scheme. For example, evolving from version 1.3.5 to 1.3.6 represents a backwards-compatible patch, from 1.3.5 to 1.4.0 a backwards-compatible new development, while switching from 1.3.5 to 2.0.0 breaks the backwards compatibility.</p>
 </div>
 <div id="sem-vserion" class="imageblock text-center">
@@ -290,14 +296,18 @@ The branching strategy needs to support parallel work between contributors, ease
 <div class="paragraph">
 <p>Consider the (branch_type/branch_id) naming convention for branches. The branch_type is one of the adopted branching strategy: <em>master, feature, hotfix, release</em>. The branch_id is a unique identifier. In case the development process is managed with a ticket management system, then the branch_id shall be the ticket id. Alternatively, branches can be given mnemonic identifiers, but doing so is discouraged as a regular practice.</p>
 </div>
-<div class="paragraph text-center">
-<p><em>branch_type/branch_id</em></p>
+<div class="quoteblock text-center">
+<blockquote>
+<em>branch_type/branch_id</em>
+</blockquote>
 </div>
 <div class="paragraph">
 <p>So for example implementation of a feature registers under id "#32" in the ticket management system, shall be developed in the branch named "feature/32". While bug "#45" shall be fixed in the branch named "hotfix/45". Preparation of release "0.5.0" shall be done in the branch named "release/0.5.0".</p>
 </div>
-<div class="paragraph text-center">
-<p><em>vX.Y.X</em></p>
+<div class="quoteblock text-center">
+<blockquote>
+<em>vX.Y.X</em>
+</blockquote>
 </div>
 <div class="paragraph">
 <p>Tags on the other hand shall be named always by the semantic version scheme mentioned in the previous section. A good practice is to add the prefix "v" for "version" like this "vX.Y.X". For example, the release "0.5.1" shall be tagged with "v0.5.1".</p>
