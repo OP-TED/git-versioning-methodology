@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: GitHub usage methodology</title>
+    <title>Git usage methodology :: GitHub usage methodology</title>
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -56,10 +56,24 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="main-docs" data-version="latest">
+<div class="nav-container" data-component="git-methodology" data-version="latest">
   <aside class="nav">
     <div class="panels">
-<div class="nav-panel-explore is-active" data-panel="explore">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">GitHub usage methodology</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="index.html">Methodology</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">GitHub usage methodology</span>
     <span class="version">latest</span>
@@ -82,6 +96,10 @@
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">GitHub usage methodology</a></li>
+    <li><a href="index.html">Methodology</a></li>
+  </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/meaningfy-ws/git-versioning-methodology/edit/main/docs/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
   </div>
@@ -90,6 +108,15 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
+<h1 class="page"><strong>Git usage methodology</strong></h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a document preamble.</p>
+</div>
+<!-- toc disabled -->
+</div>
+</div>
 <div class="sect1">
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
@@ -167,8 +194,13 @@ A solution to this problem is called “Semantic Versioning” [semver], which i
 Consider a version format of X.Y.Z (Major.Minor.Patch). Bug fixes not affecting the artefact increment the patch version. Backwards compatible artefact additions/changes increment the minor version. And, backwards-incompatible artefact changes increment the major version. For details refer to [semver] specification. Under this scheme version numbers and the way they change convey meaning about the underlying artefact and what has been modified from one version to the next.<br>
  <a href="#sem-vserion">Figure 1</a> depicts an example of how the changes in version number shall be interpreted under the semantic versioning scheme. For example, evolving from version 1.3.5 to 1.3.6 represents a backwards-compatible patch, from 1.3.5 to 1.4.0 a backwards-compatible new development, while switching from 1.3.5 to 2.0.0 breaks the backwards compatibility.</p>
 </div>
-<div id="sem-vserion" class="paragraph">
-<div class="title">Backwards compatibility in semantic versioning scheme</div>
+<div id="sem-vserion" class="imageblock text-center">
+<div class="content">
+<img src="_images/semantic_versioning.png" alt="semantic versioning" width="70%">
+</div>
+<div class="title">Figure 1. Backwards compatibility in semantic versioning scheme</div>
+</div>
+<div class="paragraph">
 <p>Adopting semantic versioning has a number of advantages [dp].</p>
 </div>
 <div class="ulist">
@@ -217,7 +249,7 @@ When a new branch is created, Git keeps track of which commit is branched off in
 <div class="content">
 <img src="_images/git-basic-flow.png" alt="basic" width="80%">
 </div>
-<div class="title">Figure 1. Basic branching flow with pull request</div>
+<div class="title">Figure 2. Basic branching flow with pull request</div>
 </div>
 <div class="paragraph">
 <p>The contributor makes changes locally on a support branch (for example a feature) and when the work is complete, the changes are all pushed into the remote repository.  Then the contributor files a pull request, which means that before merging the branch into the master branch, the changes must be revised by peers. This process usually generates a number of improvement suggestions, which result in a series of additional minor commits. Using pull requests is a best practice generally adopted for ensuring a higher quality of work. When the pull request is accepted, the branch author or the repository maintainer merges the branch into the master or development branch, depending on the branching strategy. The pull request is closed and the feature branch is deleted from the repository.</p>
@@ -265,7 +297,7 @@ Tags on the other hand shall be named always by the semantic version scheme ment
 <div class="content">
 <img src="_images/git-simplified-flow.png" alt="basic" width="97%">
 </div>
-<div class="title">Figure 2. Simplified Gitflow model</div>
+<div class="title">Figure 3. Simplified Gitflow model</div>
 </div>
 <div class="sect3">
 <h4 id="_developing_a_new_feature"><a class="anchor" href="#_developing_a_new_feature"></a>Developing a new feature</h4>
@@ -305,7 +337,7 @@ As publishers, we need to ensure the possibility to gradually update an artefact
 <div class="content">
 <img src="_images/two-in-production.png" alt="basic" width="90%">
 </div>
-<div class="title">Figure 3. Two in production evolution pattern</div>
+<div class="title">Figure 4. Two in production evolution pattern</div>
 </div>
 <div class="paragraph">
 <p>The solution is to maintain two versions of a model in parallel as working standards as depicted in <a href="#two-in-production">Figure 4</a>. These two model versions provide roughly the same domain coverage but are incompatible with each other because they implement different modelling decisions and approaches. <br>
@@ -368,143 +400,6 @@ The experimental preview, which covers the pre-release guarantees, is complement
 <a href="https://gitversion.readthedocs.io/en/latest/input/docs/git-branching-strategies/gitflow-examples/"><em>https://Gitversion.readthedocs.io/en/latest/input/docs/Git-branching-strategies/Gitflow-examples/</a></em></p>
 </div>
 </div>
-</div>
-<h1 id="_to_be_revised" class="sect0"><a class="anchor" href="#_to_be_revised"></a>To be revised</h1>
-<div class="paragraph">
-<p>Why are multiple branches needed?<br>
-Multiple branches are needed to support multiple parallel developments and to not affect the main project when developing a feature</p>
-</div>
-<div class="paragraph">
-<p><strong>Project development with different versions</strong></p>
-</div>
-<div class="paragraph">
-<p>*Option 1: Different repositories *<br>
-A project with multiple versions will have a different repository for each version.</p>
-</div>
-<div class="paragraph">
-<p><strong>Pros:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Develop multiple versions at the same time</p>
-</li>
-<li>
-<p>Easy to work with binary files</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Cons:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Not easy to maintain</p>
-</li>
-<li>
-<p>Not a linear development history</p>
-</li>
-<li>
-<p>Creating a centralized documentation might bring difficulties</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Option 2:  Branches that will merge into master</strong><br>
-Use branches created from master to experiment, make edits and additions and changes and eventually roll that branch back into the master once the work has been approved. The master branch then is updated to contain all the work done.<br>
-* Pros:*</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Keep a linear history for the project development</p>
-</li>
-<li>
-<p>Easy to maintain
-<strong>Cons:</strong></p>
-</li>
-<li>
-<p>Developing multiple versions of binary files will require creating a new folder with the modified file before merging it into the master to avoid conflicts</p>
-</li>
-<li>
-<p>The master branch will need to  have a folder for each version
-<strong>Option 3: Separate branches</strong><br>
-Use branches to develop versions in parallel without having any links or history between them. In this case, each version will have its own branch and the master branch will become redundant.<br></p>
-</li>
-<li>
-<p>Pros:*</p>
-</li>
-<li>
-<p>Develop multiple versions at the same time
-<strong>Cons:</strong></p>
-</li>
-<li>
-<p>The repository will become messy and hard to maintain</p>
-</li>
-<li>
-<p>Development history will not be easy to follow</p>
-</li>
-<li>
-<p>The Master branch will become redundant</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Option 4: Separate branches that will be deleted</strong><br>
-Use branches to develop versions in parallel without having any links or history between them. In this case, each version will have its own branch and it will be deleted once the version is fully developed and reached the end of life<br>
-* Pros:*</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Develop multiple versions at the same time
-<strong>Cons:</strong></p>
-</li>
-<li>
-<p>The repository will become messy and hard to maintain</p>
-</li>
-<li>
-<p>Development history will be lost</p>
-</li>
-<li>
-<p>Master branch will become redundant</p>
-</li>
-<li>
-<p>After the branch it deleted you can go back and work on it</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Tags</p>
-</div>
-<div class="paragraph">
-<p>Like most VCSs, Git has the ability to tag specific points in a repository’s history as being important. Typically, people use this functionality to mark release points (v1.0, v2.0 and so on).</p>
-</div>
-<div class="paragraph">
-<p>Tags will be used to mark a release of the product and depending on project development they will have to be use differently.</p>
-</div>
-<div class="paragraph">
-<p>Project development with different repositories</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Tags will be created on the master branch for each repository
-Project development with branches that will merge into master</p>
-</li>
-<li>
-<p>Tags will be created on the master branch after the version branch has been merged
-Project development with separate branches</p>
-</li>
-<li>
-<p>Tags will be created on the version branch
-Project development with separate branches that will be deleted</p>
-</li>
-<li>
-<p>Tags will be created on the version branch</p>
-</li>
-</ul>
 </div>
 <div class="sect1">
 <h2 id="_references"><a class="anchor" href="#_references"></a>References</h2>
