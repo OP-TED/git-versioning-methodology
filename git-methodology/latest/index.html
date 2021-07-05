@@ -179,7 +179,7 @@ Current practice and issues (fixing SOTA):</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>In the world of software management, there exists a dreaded place called “dependency hell”. This applies not only to software development but to authoring models, architecture, documentation, or, broadly, any artefact. The bigger grows the body of work (software, model, documentation etc.) the more changes are introduced and dependencies integrated, which makes it more likely to arrive, one day, in this pit of despair.<br>
+<p>In the world of software management, there exists a dreaded place called "dependency hell". This applies not only to software development but to authoring models, architecture, documentation, or, broadly, any artefact. The bigger grows the body of work (software, model, documentation etc.) the more changes are introduced and dependencies integrated, which makes it more likely to arrive, one day, in this pit of despair.<br>
 Releasing a new work package quickly becomes a nightmare. If the dependency specifications are too tight, you are in danger of version lock (the inability to upgrade a package without having to release new versions of every dependent package). If dependencies are specified too loosely, you will inevitably be bitten by version promiscuity (assuming compatibility with more future versions than is reasonable). Dependency hell is where you are when version lock and/or version promiscuity prevent you from easily and safely moving your project forward. <a href="#semver">[semver]</a> <br>
 A solution to this problem is called "Semantic Versioning" <a href="#semver">[semver]</a>, which is a simple set of rules and requirements that dictate how version numbers are assigned and incremented. It involves describing clearly and precisely what is being published and which features are included and what are the limitations, basically setting the expectations and scope. Once the artefacts are identified for the public, you communicate changes to them with specific increments to your version number and eventually with associated change notes. <br>
 <em>X.Y.Z (Major.Minor.Patch)</em><br>
@@ -250,10 +250,16 @@ When a new branch is created, Git keeps track of which commit is branched off in
 <div class="sect2">
 <h3 id="_contribution_types"><a class="anchor" href="#_contribution_types"></a>Contribution types</h3>
 <div class="paragraph">
-<p>Typical contribution - The typical day-to-day flow includes normal changes that contributors make to the codebase, changes that do not bring any heightened sense of urgency. These changes are ordinary in terms of size and complexity for your codebase and, generally, will make up the bulk of all the changes the contributors make. Since this flow will be used the most frequently, your strategy here must ensure proper coordination among the developers and support all relevant policies such as automated testing, pull requests, and deployments.<br>
-Emergency hotfixes - An emergency hotfix is when a particular incident or issue has been expedited to deal with some emergent situation, normally bug fixes. Your flow must account for a contributor who needs to make an urgent change and get it all the way through your process and into production while still aligning with the typical development workflow.<br>
-Simple vs complex changes - As the practice has evolved, the emphasis on contributors working on smaller changes and limited batch sizes has increased. This is due to the broader use of flow-based delivery practices. However, there are still situations when large, complex changes must be made and the branching strategy must accommodate those situations.<br>
-Standard vs experimental changes - Contributors feel greater certainty about how standard code changes will perform than with experimental code changes. For example, if a new untested approach is evaluated, or an experimental feature is developed, the result is almost always uncertain about how well it integrates with the existing codebase. In that case, the changes may or may not actually go to production but still need to be shared with other contributors. The branching strategy must account for these types of experimental changes.</p>
+<p><strong>Typical contribution</strong> - The typical day-to-day flow includes normal changes that contributors make to the codebase, changes that do not bring any heightened sense of urgency. These changes are ordinary in terms of size and complexity for your codebase and, generally, will make up the bulk of all the changes the contributors make. Since this flow will be used the most frequently, your strategy here must ensure proper coordination among the developers and support all relevant policies such as automated testing, pull requests, and deployments.</p>
+</div>
+<div class="paragraph">
+<p><strong>Emergency hotfixes</strong> - An emergency hotfix is when a particular incident or issue has been expedited to deal with some emergent situation, normally bug fixes. Your flow must account for a contributor who needs to make an urgent change and get it all the way through your process and into production while still aligning with the typical development workflow.</p>
+</div>
+<div class="paragraph">
+<p><strong>Simple vs complex changes</strong> - As the practice has evolved, the emphasis on contributors working on smaller changes and limited batch sizes has increased. This is due to the broader use of flow-based delivery practices. However, there are still situations when large, complex changes must be made and the branching strategy must accommodate those situations.</p>
+</div>
+<div class="paragraph">
+<p><strong>Standard vs experimental changes</strong> - Contributors feel greater certainty about how standard code changes will perform than with experimental code changes. For example, if a new untested approach is evaluated, or an experimental feature is developed, the result is almost always uncertain about how well it integrates with the existing codebase. In that case, the changes may or may not actually go to production but still need to be shared with other contributors. The branching strategy must account for these types of experimental changes.</p>
 </div>
 </div>
 <div class="sect2">
@@ -261,22 +267,40 @@ Standard vs experimental changes - Contributors feel greater certainty about how
 <div class="paragraph">
 <p>Typically the branches are divided into two categories, the main branches: master and development; and supporting branches: feature, hotfix, release. <br>
 Any repository holds at least one min branch, and in the case, a development branch is adopted then there are two main branches with an infinite lifetime. <br>
-The branching strategy needs to support parallel work between contributors, ease tracking of features, prepare for production releases and to assist in quickly fixing live production problems. This is done with supporting branches. Unlike the main branches, these branches always have a limited lifetime, since they are removed after the work is completed.<br>
-<strong>Master branch</strong> - Every Git repository has a trunk (also referred to as main, mainline, or the master branch). When a Git repository is created, the trunk exists automatically as the implicit first branch. The use of a trunk and the timing of changes landing on it vary depending on the exact branching strategy being used. In trunk-based development, the trunk is the central branch to which all developers send their code changes.<br>
-<strong>Feature branch</strong> - A feature branch is used to develop a new feature. It can be short- or long-lived depending on the specific branching flow. The branch often is used by a single contributor for only their changes, but it is possible to share it with other contributors as well. Feature branch spans from either the trunk or development branch depending on the branching strategy. <br>
-<strong>Development branch</strong> (optional) - The development branch is a long-lived feature branch that holds changes made by contributors before they’re ready to go to production. It parallels the trunk and is never removed. Some teams have the development branch correspond with a non-production environment. As such, commits to the development branch trigger test environment deployments if automation is set up. Development and trunk are frequently bidirectionally integrated, and it’s typical for a contributor to bear the responsibility of integrating them. Some branching strategies avoid development branch and span feature or hotfix branches directly from the trunk. This is decided by the branching strategy and in our case, we leave it out. <br>
-<strong>Release branch</strong> - A release branch can be either short-lived or long-lived depending on the strategy. In either case, the release branch reflects a set of changes that are intended to go through the production release process. It usually involves, among others, increasing the version number, announcing a release, fixing last-minute bugs but no new features are included.  <br>
-<strong>Hotfix branch</strong> - A hotfix branch is a branch that’s used generally to hold changes related to emergency bug fixes. They are typically short-lived and are split off from a release or main branch. These branches are common in projects with explicitly versioned artefacts.</p>
+The branching strategy needs to support parallel work between contributors, ease tracking of features, prepare for production releases and to assist in quickly fixing live production problems. This is done with supporting branches. Unlike the main branches, these branches always have a limited lifetime, since they are removed after the work is completed.</p>
+</div>
+<div class="paragraph">
+<p><strong>Master branch</strong> - Every Git repository has a trunk (also referred to as main, mainline, or the master branch). When a Git repository is created, the trunk exists automatically as the implicit first branch. The use of a trunk and the timing of changes landing on it vary depending on the exact branching strategy being used. In trunk-based development, the trunk is the central branch to which all developers send their code changes.</p>
+</div>
+<div class="paragraph">
+<p><strong>Feature branch</strong> - A feature branch is used to develop a new feature. It can be short- or long-lived depending on the specific branching flow. The branch often is used by a single contributor for only their changes, but it is possible to share it with other contributors as well. Feature branch spans from either the trunk or development branch depending on the branching strategy.</p>
+</div>
+<div class="paragraph">
+<p><strong>Development branch</strong> (optional) - The development branch is a long-lived feature branch that holds changes made by contributors before they’re ready to go to production. It parallels the trunk and is never removed. Some teams have the development branch correspond with a non-production environment. As such, commits to the development branch trigger test environment deployments if automation is set up. Development and trunk are frequently bidirectionally integrated, and it’s typical for a contributor to bear the responsibility of integrating them. Some branching strategies avoid development branch and span feature or hotfix branches directly from the trunk. This is decided by the branching strategy and in our case, we leave it out.</p>
+</div>
+<div class="paragraph">
+<p><strong>Release branch</strong> - A release branch can be either short-lived or long-lived depending on the strategy. In either case, the release branch reflects a set of changes that are intended to go through the production release process. It usually involves, among others, increasing the version number, announcing a release, fixing last-minute bugs but no new features are included.</p>
+</div>
+<div class="paragraph">
+<p><strong>Hotfix branch</strong> - A hotfix branch is a branch that’s used generally to hold changes related to emergency bug fixes. They are typically short-lived and are split off from a release or main branch. These branches are common in projects with explicitly versioned artefacts.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_naming_conventions"><a class="anchor" href="#_naming_conventions"></a>Naming conventions</h3>
 <div class="paragraph">
-<p>Consider the (branch_type/branch_id) naming convention for branches. The branch_type is one of the adopted branching strategy: <em>master, feature, hotfix, release</em>. The branch_id is a unique identifier. In case the development process is managed with a ticket management system, then the branch_id shall be the ticket id. Alternatively, branches can be given mnemonic identifiers, but doing so is discouraged as a regular practice.<br>
-<em>branch_type/branch_id</em><br>
-So for example implementation of a feature registers under id “#32” in the ticket management system, shall be developed in the branch named “feature/32”. While bug “#45” shall be fixed in the branch named “hotfix/45”. Preparation of release “0.5.0” shall be done in the branch named “release/0.5.0”.<br>
-<em>vX.Y.X</em><br>
-Tags on the other hand shall be named always by the semantic version scheme mentioned in the previous section. A good practice is to add the prefix “v” for “version” like this “vX.Y.X”. For example, the release “0.5.1” shall be tagged with “v0.5.1”.</p>
+<p>Consider the (branch_type/branch_id) naming convention for branches. The branch_type is one of the adopted branching strategy: <em>master, feature, hotfix, release</em>. The branch_id is a unique identifier. In case the development process is managed with a ticket management system, then the branch_id shall be the ticket id. Alternatively, branches can be given mnemonic identifiers, but doing so is discouraged as a regular practice.</p>
+</div>
+<div class="paragraph text-center">
+<p><em>branch_type/branch_id</em></p>
+</div>
+<div class="paragraph">
+<p>So for example implementation of a feature registers under id "#32" in the ticket management system, shall be developed in the branch named "feature/32". While bug "#45" shall be fixed in the branch named "hotfix/45". Preparation of release "0.5.0" shall be done in the branch named "release/0.5.0".</p>
+</div>
+<div class="paragraph text-center">
+<p><em>vX.Y.X</em></p>
+</div>
+<div class="paragraph">
+<p>Tags on the other hand shall be named always by the semantic version scheme mentioned in the previous section. A good practice is to add the prefix "v" for "version" like this "vX.Y.X". For example, the release "0.5.1" shall be tagged with "v0.5.1".</p>
 </div>
 </div>
 <div class="sect2">
