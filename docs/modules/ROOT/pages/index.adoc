@@ -1,3 +1,25 @@
+:imagesdir: images
+:downloaddir: download
+:xrefstyle: short
+
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+
+
+= *Git usage methodology*
+
+:toc:
+:toc-placement: preamble
+:toclevels: 1
+:showtitle:
+
+This is a document preamble.
+
+toc::[]
+
 == Introduction
 ...
 
@@ -42,9 +64,8 @@ Consider a version format of X.Y.Z (Major.Minor.Patch). Bug fixes not affecting 
 [#sem-vserion]
 .Backwards compatibility in semantic versioning scheme
 [reftext="Figure {counter:figure}",align="center"]
-//image::../images/semantic_versioning.png[width=70%]
-// image::../images/semantic_versioning.png[semantic versioning scheme, 500, align="center"]
-// image::./docs/modules/ROOT/images/semantic_versioning.png[semantic versioning scheme, 500, align="center"]
+image::semantic_versioning.png[width=70%]
+
 Adopting semantic versioning has a number of advantages [dp].
 
 * Accuracy and exact identification of artefact version
@@ -182,103 +203,6 @@ https://github.com/GitTools/GitVersion/issues/1309[_https://Github.com/GitTools/
 _The normal way to handle this is to create _https://gitversion.readthedocs.io/en/latest/git-branching-strategies/gitflow-examples/#support-branches[_support branches]__ for the older versions you need to support. Since you'll do most development on the latest version, residing in __+master+__ and __+develop+__, you'll most likely only need __+hotfix/*+__ branches to fix bugs and then merge these against __+master+__ and the different __+release/*+__ branches you have._ +
 _If you need to do major feature developments on your support branches, you need to treat the support branches as __+master+__ for each version, skipping __+develop+__ altogether. If you need __+develop+__ because you need a synchronisation point between several ongoing feature branches on an old version of the product, it almost sounds like that version warrants separation out into its own repository._ +
 https://gitversion.readthedocs.io/en/latest/input/docs/git-branching-strategies/gitflow-examples/[_https://Gitversion.readthedocs.io/en/latest/input/docs/Git-branching-strategies/Gitflow-examples/]_
-
-
-= To be revised
-
-
-Why are multiple branches needed? +
-Multiple branches are needed to support multiple parallel developments and to not affect the main project when developing a feature
-
-*Project development with different versions*
-
-*Option 1: Different repositories * +
-A project with multiple versions will have a different repository for each version.
-
-*Pros:*
-
-* Develop multiple versions at the same time
-* Easy to work with binary files
-
-*Cons:*
-
-* Not easy to maintain
-* Not a linear development history
-* Creating a centralized documentation might bring difficulties
-
-
-*Option 2:  Branches that will merge into master* +
-Use branches created from master to experiment, make edits and additions and changes and eventually roll that branch back into the master once the work has been approved. The master branch then is updated to contain all the work done. +
-* Pros:*
-
-* Keep a linear history for the project development
-* Easy to maintain
-*Cons:*
-
-* Developing multiple versions of binary files will require creating a new folder with the modified file before merging it into the master to avoid conflicts
-* The master branch will need to  have a folder for each version
-*Option 3: Separate branches* +
-Use branches to develop versions in parallel without having any links or history between them. In this case, each version will have its own branch and the master branch will become redundant. +
-* Pros:*
-
-* Develop multiple versions at the same time
-*Cons:*
-
-* The repository will become messy and hard to maintain
-* Development history will not be easy to follow
-* The Master branch will become redundant
-
-
-*Option 4: Separate branches that will be deleted* +
-Use branches to develop versions in parallel without having any links or history between them. In this case, each version will have its own branch and it will be deleted once the version is fully developed and reached the end of life +
-* Pros:*
-
-* Develop multiple versions at the same time
-*Cons:*
-
-* The repository will become messy and hard to maintain
-* Development history will be lost
-* Master branch will become redundant
-* After the branch it deleted you can go back and work on it
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Tags
-
-Like most VCSs, Git has the ability to tag specific points in a repository’s history as being important. Typically, people use this functionality to mark release points (v1.0, v2.0 and so on).
-
-Tags will be used to mark a release of the product and depending on project development they will have to be use differently.
-
-
-Project development with different repositories
-
-* Tags will be created on the master branch for each repository
-Project development with branches that will merge into master
-
-* Tags will be created on the master branch after the version branch has been merged
-Project development with separate branches
-
-* Tags will be created on the version branch
-Project development with separate branches that will be deleted
-
-* Tags will be created on the version branch
-
-
-
 
 
 == References
