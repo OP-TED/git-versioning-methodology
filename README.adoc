@@ -2,7 +2,7 @@
 
 This repository hosts the recommended methodology on how the Git repositories shall be organised and what evolution patterns can be employed.
 
-You can read the https://meaningfy-ws.github.io/git-versioning-methodology/[GitHub usage methodology] online.
+You can read the https://meaningfy-ws.github.io/git-versioning-methodology/git-methodology/latest/[GitHub usage methodology] online.
 
 === Contributing
 
