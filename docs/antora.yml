@@ -2,6 +2,4 @@ name: git-methodology
 version: latest
 title: GitHub usage methodology
 start_page: ROOT:index.adoc
-nav:
-- modules/ROOT/nav.adoc
 
