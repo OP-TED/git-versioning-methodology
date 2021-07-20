@@ -1,1 +1,2 @@
 * xref:index.adoc[Methodology]
+* image:OP-Logo.png[width=75]
