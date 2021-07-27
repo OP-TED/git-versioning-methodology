@@ -35,10 +35,12 @@ Additionally, Git manages named references to indicate locations of various comm
 == OP Context
 
 Assumptions:
+
 * Git is used for managing textual and binary sources: textual sources can smoothly evolve and be tracked by Git; binary sources have to be rewritten each time and no evolution tracking is possible (hopefully changes are based on incremental evolution and not arbitrary)
 * Folder structure of the project is consistent and coherent in the evolution history and across the branches. 
 
 Requirements:
+
 * Share the current API functionalities/capabilities or current model organisation/structure/approach
 * Allow comparing versions and detect immediately whether versions are compatible
 * Each major, minor and patch versions are pushlished separate tags. 
