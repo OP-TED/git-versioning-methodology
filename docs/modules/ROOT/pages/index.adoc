@@ -34,21 +34,17 @@ Additionally, Git manages named references to indicate locations of various comm
 
 == OP Context
 
+Assumptions:
+* Git is used for managing textual and binary sources: textual sources can smoothly evolve and be tracked by Git; binary sources have to be rewritten each time and no evolution tracking is possible (hopefully changes are based on incremental evolution and not arbitrary)
+* Folder structure of the project is consistent and coherent in the evolution history and across the branches. 
+
 Requirements:
-
-* Git is used to managing textual and binary sources: textual sources can smoothly evolve and be tracked by Git; binary sources have to be rewritten each time and no evolution tracking is possible (hopefully changes are based on incremental evolution and not arbitrary)
-* Need to indicate the current API functionalities/capabilities or current model organisation/structure/approach
-* Need to allow comparing versions and detect immediately whether versions are compatible
-* Multiple major versions may be maintained in parallel
-* It shall be possible to transit smoothly from one major version to another one without disrupting the current client, but also without spanning multiple production versions
-* Clients shall be guaranteed to have no disruptions for a published version for a given time frame.
-* Clients that are unable to migrate to new versions shall be supported.
-Current practice and issues (fixing SOTA):
-
-* Each major, minor and patch versions are maintained in a separate branch
-* The changes are conflicting/incompatible between branches
-* Therefore it is not possible to trance consistently changes across and how they shall be merged and where
-* Folder structure differs from one branch to another making it impossible to merge branches
+* Share the current API functionalities/capabilities or current model organisation/structure/approach
+* Allow comparing versions and detect immediately whether versions are compatible
+* Each major, minor and patch versions are pushlished separate tags. 
+* Branches shall not be used for versioning but for specific functional purposes, suchs as, individual bug fixing, individual new feature developments, etc. 
+* Allow to transit smoothly from one major version to the next one without disrupting the current clients. Clients shall be guaranteed to have no disruptions for a published version for an established time frame.
+* Clients that are unable to migrate to new versions might be be supported.
 
 == Semantic versioning
 
