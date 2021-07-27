@@ -81,18 +81,42 @@ Additionally, Git manages named references to indicate locations of various comm
 <h2 id="_op_context"><a class="anchor" href="#_op_context"></a>OP Context</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Assumptions:
-* Git is used for managing textual and binary sources: textual sources can smoothly evolve and be tracked by Git; binary sources have to be rewritten each time and no evolution tracking is possible (hopefully changes are based on incremental evolution and not arbitrary)
-* Folder structure of the project is consistent and coherent in the evolution history and across the branches.</p>
+<p>Assumptions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Git is used for managing textual and binary sources: textual sources can smoothly evolve and be tracked by Git; binary sources have to be rewritten each time and no evolution tracking is possible (hopefully changes are based on incremental evolution and not arbitrary)</p>
+</li>
+<li>
+<p>Folder structure of the project is consistent and coherent in the evolution history and across the branches.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Requirements:
-* Share the current API functionalities/capabilities or current model organisation/structure/approach
-* Allow comparing versions and detect immediately whether versions are compatible
-* Each major, minor and patch versions are pushlished separate tags.
-* Branches shall not be used for versioning but for specific functional purposes, suchs as, individual bug fixing, individual new feature developments, etc.
-* Allow to transit smoothly from one major version to the next one without disrupting the current clients. Clients shall be guaranteed to have no disruptions for a published version for an established time frame.
-* Clients that are unable to migrate to new versions might be be supported.</p>
+<p>Requirements:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Share the current API functionalities/capabilities or current model organisation/structure/approach</p>
+</li>
+<li>
+<p>Allow comparing versions and detect immediately whether versions are compatible</p>
+</li>
+<li>
+<p>Each major, minor and patch versions are pushlished separate tags.</p>
+</li>
+<li>
+<p>Branches shall not be used for versioning but for specific functional purposes, suchs as, individual bug fixing, individual new feature developments, etc.</p>
+</li>
+<li>
+<p>Allow to transit smoothly from one major version to the next one without disrupting the current clients. Clients shall be guaranteed to have no disruptions for a published version for an established time frame.</p>
+</li>
+<li>
+<p>Clients that are unable to migrate to new versions might be be supported.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
