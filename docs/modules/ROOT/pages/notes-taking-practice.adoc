@@ -27,6 +27,7 @@ This section captures the set of requirements for documenting the workgroup sess
 * The workgroup meeting discussions need to be recorded so that on a latter occasion the reader know what were the topics addressed and teh decision on each of the topics.
 * The workgroup decisions must be accessible on a public space, preferably next to the model.
 * The notes should, where possible, contain visual representation or diagrams for better conveying the intended meaning.
+* to be continued ...
 
 == Session setup
 
@@ -72,6 +73,7 @@ The _domain expert_ participants are discussing the issue proposed by the modera
 The session note-taking shall be done preferably in a persistent collaborative environment. This means that solutions that allow simultaneous multi-user editing on the same document shall be preferred. All workgroup participants shall have access to the document or at minimum the session moderator, secretary and model editor.
 
 Possible technical choices:
+
 * Word and Excel files in Sharepoint/MsTeams
 * Google Documents/Sheets
 
